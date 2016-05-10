@@ -9,7 +9,7 @@ module TopSim;
 	initial begin
 		clock=0;
 		reset=1;
-		#6;
+		#5;
 		reset = 0;
 	end
    always

@@ -1,0 +1,2018 @@
+Release 14.2 - xst P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: Top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Top"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : Top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "SignExt.v" in library work
+Compiling verilog file "RegMem.v" in library work
+Module <SignExt> compiled
+Compiling verilog file "InstMem.v" in library work
+Module <RegMem> compiled
+Compiling verilog file "DataMem.v" in library work
+Module <InstMem> compiled
+Compiling verilog file "Ctr.v" in library work
+Module <DataMem> compiled
+Compiling verilog file "AluCtr.v" in library work
+Module <Ctr> compiled
+Compiling verilog file "Alu.v" in library work
+Module <AluCtr> compiled
+Compiling verilog file "Add.v" in library work
+Module <Alu> compiled
+Compiling verilog file "Top.v" in library work
+Module <Add> compiled
+Module <Top> compiled
+No errors in compilation
+Analysis of file <"Top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Top> in library <work>.
+
+Analyzing hierarchy for module <Add> in library <work>.
+
+Analyzing hierarchy for module <InstMem> in library <work>.
+
+Analyzing hierarchy for module <RegMem> in library <work>.
+
+Analyzing hierarchy for module <SignExt> in library <work>.
+
+Analyzing hierarchy for module <Ctr> in library <work>.
+
+Analyzing hierarchy for module <AluCtr> in library <work>.
+
+Analyzing hierarchy for module <Alu> in library <work>.
+
+Analyzing hierarchy for module <DataMem> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Top>.
+Module <Top> is correct for synthesis.
+ 
+Analyzing module <Add> in library <work>.
+Module <Add> is correct for synthesis.
+ 
+Analyzing module <InstMem> in library <work>.
+INFO:Xst:2546 - "InstMem.v" line 9: reading initialization file "./inst_mem.txt".
+WARNING:Xst:2319 - "InstMem.v" line 9: Signal instFile in initial block is partially initialized. The initialization will be ignored.
+INFO:Xst:1607 - Contents of array <instFile> may be accessed with an index that does not cover the full array size.
+WARNING:Xst:905 - "InstMem.v" line 12: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <instFile>
+Module <InstMem> is correct for synthesis.
+ 
+Analyzing module <RegMem> in library <work>.
+WARNING:Xst:905 - "RegMem.v" line 15: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <regFile>
+Module <RegMem> is correct for synthesis.
+ 
+Analyzing module <SignExt> in library <work>.
+Module <SignExt> is correct for synthesis.
+ 
+Analyzing module <Ctr> in library <work>.
+Module <Ctr> is correct for synthesis.
+ 
+Analyzing module <AluCtr> in library <work>.
+Module <AluCtr> is correct for synthesis.
+ 
+Analyzing module <Alu> in library <work>.
+WARNING:Xst:905 - "Alu.v" line 10: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <aluRes>
+Module <Alu> is correct for synthesis.
+ 
+Analyzing module <DataMem> in library <work>.
+INFO:Xst:2546 - "DataMem.v" line 13: reading initialization file "./data_mem.txt".
+WARNING:Xst:2319 - "DataMem.v" line 13: Signal memFile in initial block is partially initialized. The initialization will be ignored.
+INFO:Xst:1607 - Contents of array <memFile> may be accessed with an index that does not cover the full array size.
+WARNING:Xst:905 - "DataMem.v" line 16: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <memFile>
+INFO:Xst:1607 - Contents of array <memFile> may be accessed with an index that does not cover the full array size.
+Module <DataMem> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <idx> in unit <RegMem> has a constant value of 0000000000011100 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <Add>.
+    Related source file is "Add.v".
+    Found 32-bit adder for signal <out>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <Add> synthesized.
+
+
+Synthesizing Unit <InstMem>.
+    Related source file is "InstMem.v".
+WARNING:Xst:647 - Input <address<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <instFile> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+Unit <InstMem> synthesized.
+
+
+Synthesizing Unit <RegMem>.
+    Related source file is "RegMem.v".
+WARNING:Xst:646 - Signal <idx> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 32-bit 32-to-1 multiplexer for signal <readData1>.
+    Found 32-bit 32-to-1 multiplexer for signal <readData2>.
+    Found 1024-bit register for signal <regFile>.
+INFO:Xst:738 - HDL ADVISOR - 1024 flip-flops were inferred for signal <regFile>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred 1024 D-type flip-flop(s).
+	inferred  64 Multiplexer(s).
+Unit <RegMem> synthesized.
+
+
+Synthesizing Unit <SignExt>.
+    Related source file is "SignExt.v".
+Unit <SignExt> synthesized.
+
+
+Synthesizing Unit <Ctr>.
+    Related source file is "Ctr.v".
+Unit <Ctr> synthesized.
+
+
+Synthesizing Unit <AluCtr>.
+    Related source file is "AluCtr.v".
+WARNING:Xst:647 - Input <funct<5:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <AluCtr> synthesized.
+
+
+Synthesizing Unit <Alu>.
+    Related source file is "Alu.v".
+WARNING:Xst:737 - Found 32-bit latch for signal <$old_aluRes_3>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 32-bit comparator less for signal <old_aluRes_3$cmp_lt0000> created at line 22.
+    Found 32-bit addsub for signal <old_aluRes_3$share0000>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <Alu> synthesized.
+
+
+Synthesizing Unit <DataMem>.
+    Related source file is "DataMem.v".
+WARNING:Xst:647 - Input <address<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 128x32-bit single-port RAM <Mram_memFile> for signal <memFile>.
+WARNING:Xst:737 - Found 32-bit latch for signal <readData>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   1 RAM(s).
+Unit <DataMem> synthesized.
+
+
+Synthesizing Unit <Top>.
+    Related source file is "Top.v".
+WARNING:Xst:646 - Signal <PC_TEMP> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <EXMEM_JUMP> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <DATAMEM_OUT<31:1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 32-bit register for signal <EXMEM_ALU_RESULT>.
+    Found 1-bit register for signal <EXMEM_BRANCH>.
+    Found 1-bit register for signal <EXMEM_MEM_READ>.
+    Found 1-bit register for signal <EXMEM_MEM_TO_REG>.
+    Found 1-bit register for signal <EXMEM_MEM_WRITE>.
+    Found 32-bit register for signal <EXMEM_NEW_PC>.
+    Found 32-bit register for signal <EXMEM_READ_DATA_2>.
+    Found 1-bit register for signal <EXMEM_REG_WRITE>.
+    Found 5-bit register for signal <EXMEM_WRITE_REG>.
+    Found 1-bit register for signal <EXMEM_ZERO>.
+    Found 2-bit register for signal <IDEX_ALU_OP>.
+    Found 1-bit register for signal <IDEX_ALU_SRC>.
+    Found 1-bit register for signal <IDEX_BRANCH>.
+    Found 32-bit register for signal <IDEX_INST_15_0>.
+    Found 5-bit register for signal <IDEX_INST_15_11>.
+    Found 5-bit register for signal <IDEX_INST_20_16>.
+    Found 1-bit register for signal <IDEX_MEM_READ>.
+    Found 1-bit register for signal <IDEX_MEM_TO_REG>.
+    Found 1-bit register for signal <IDEX_MEM_WRITE>.
+    Found 32-bit register for signal <IDEX_PC_PLUS_4>.
+    Found 32-bit register for signal <IDEX_READ_DATA_1>.
+    Found 32-bit register for signal <IDEX_READ_DATA_2>.
+    Found 1-bit register for signal <IDEX_REG_DST>.
+    Found 1-bit register for signal <IDEX_REG_WRITE>.
+    Found 32-bit register for signal <IFID_INST>.
+    Found 32-bit register for signal <IFID_PC_PLUS_4>.
+    Found 32-bit register for signal <MEMWB_ALU_RESULT>.
+    Found 1-bit register for signal <MEMWB_MEM_TO_REG>.
+    Found 1-bit register for signal <MEMWB_READ_DATA>.
+    Found 1-bit register for signal <MEMWB_REG_WRITE>.
+    Found 5-bit register for signal <MEMWB_WRITE_REG>.
+    Found 32-bit register for signal <PC>.
+    Summary:
+	inferred 390 D-type flip-flop(s).
+Unit <Top> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 128x32-bit single-port RAM                            : 1
+# Adders/Subtractors                                   : 3
+ 32-bit adder                                          : 2
+ 32-bit addsub                                         : 1
+# Registers                                            : 64
+ 1-bit register                                        : 16
+ 2-bit register                                        : 1
+ 32-bit register                                       : 43
+ 5-bit register                                        : 4
+# Latches                                              : 2
+ 32-bit latch                                          : 2
+# Comparators                                          : 1
+ 32-bit comparator less                                : 1
+# Multiplexers                                         : 2
+ 32-bit 32-to-1 multiplexer                            : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1290 - Hierarchical block <PCIFAdd> is unconnected in block <Top>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <instMem> is unconnected in block <Top>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <regMem> is unconnected in block <Top>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <signExt> is unconnected in block <Top>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <ctr> is unconnected in block <Top>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <EXAdd> is unconnected in block <Top>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <aluCtr> is unconnected in block <Top>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <alu> is unconnected in block <Top>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <dataMem> is unconnected in block <Top>.
+   It will be removed from the design.
+
+Synthesizing (advanced) Unit <Top>.
+The following registers are absorbed into accumulator <PC>: 1 register on signal <PC>.
+Unit <Top> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 128x32-bit single-port distributed RAM                : 1
+# Adders/Subtractors                                   : 3
+ 32-bit adder                                          : 2
+ 32-bit addsub                                         : 1
+# Accumulators                                         : 1
+ 32-bit up loadable accumulator                        : 1
+# Registers                                            : 1382
+ Flip-Flops                                            : 1382
+# Latches                                              : 2
+ 32-bit latch                                          : 2
+# Comparators                                          : 1
+ 32-bit comparator less                                : 1
+# Multiplexers                                         : 64
+ 1-bit 32-to-1 multiplexer                             : 64
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <IDEX_INST_15_11_2> in Unit <Top> is equivalent to the following FF/Latch, which will be removed : <IDEX_INST_15_0_13> 
+INFO:Xst:2261 - The FF/Latch <IDEX_INST_15_11_1> in Unit <Top> is equivalent to the following FF/Latch, which will be removed : <IDEX_INST_15_0_12> 
+INFO:Xst:2261 - The FF/Latch <IDEX_BRANCH> in Unit <Top> is equivalent to the following FF/Latch, which will be removed : <IDEX_ALU_OP_0> 
+INFO:Xst:2261 - The FF/Latch <IDEX_INST_15_11_0> in Unit <Top> is equivalent to the following FF/Latch, which will be removed : <IDEX_INST_15_0_11> 
+INFO:Xst:2261 - The FF/Latch <IFID_INST_0> in Unit <Top> is equivalent to the following 31 FFs/Latches, which will be removed : <IFID_INST_1> <IFID_INST_2> <IFID_INST_3> <IFID_INST_4> <IFID_INST_5> <IFID_INST_6> <IFID_INST_7> <IFID_INST_8> <IFID_INST_9> <IFID_INST_10> <IFID_INST_11> <IFID_INST_12> <IFID_INST_13> <IFID_INST_14> <IFID_INST_15> <IFID_INST_16> <IFID_INST_17> <IFID_INST_18> <IFID_INST_19> <IFID_INST_20> <IFID_INST_21> <IFID_INST_22> <IFID_INST_23> <IFID_INST_24> <IFID_INST_25> <IFID_INST_26> <IFID_INST_27> <IFID_INST_28> <IFID_INST_29> <IFID_INST_30> <IFID_INST_31> 
+INFO:Xst:2261 - The FF/Latch <IDEX_INST_15_11_4> in Unit <Top> is equivalent to the following 17 FFs/Latches, which will be removed : <IDEX_INST_15_0_15> <IDEX_INST_15_0_16> <IDEX_INST_15_0_17> <IDEX_INST_15_0_18> <IDEX_INST_15_0_19> <IDEX_INST_15_0_20> <IDEX_INST_15_0_21> <IDEX_INST_15_0_22> <IDEX_INST_15_0_23> <IDEX_INST_15_0_24> <IDEX_INST_15_0_25> <IDEX_INST_15_0_26> <IDEX_INST_15_0_27> <IDEX_INST_15_0_28> <IDEX_INST_15_0_29> <IDEX_INST_15_0_30> <IDEX_INST_15_0_31> 
+INFO:Xst:2261 - The FF/Latch <IDEX_INST_15_11_3> in Unit <Top> is equivalent to the following FF/Latch, which will be removed : <IDEX_INST_15_0_14> 
+INFO:Xst:2261 - The FF/Latch <IDEX_INST_15_11_0> in Unit <Top> is equivalent to the following 4 FFs/Latches, which will be removed : <IDEX_INST_15_11_1> <IDEX_INST_15_11_2> <IDEX_INST_15_11_3> <IDEX_INST_15_11_4> 
+WARNING:Xst:1710 - FF/Latch <IDEX_ALU_SRC> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_MEM_TO_REG> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_MEM_READ> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_MEM_WRITE> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_BRANCH> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IFID_INST_0> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <EXMEM_WRITE_REG_4> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <EXMEM_WRITE_REG_3> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <EXMEM_WRITE_REG_2> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <EXMEM_WRITE_REG_1> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <EXMEM_WRITE_REG_0> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <EXMEM_MEM_WRITE> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <EXMEM_MEM_TO_REG> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <EXMEM_MEM_READ> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_INST_15_0_10> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_INST_15_0_9> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_INST_15_0_8> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_INST_15_0_7> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_INST_15_0_6> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_INST_15_0_5> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_INST_15_0_4> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_INST_15_0_3> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_INST_15_0_2> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_INST_15_0_1> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_INST_15_0_0> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_INST_15_11_0> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_INST_20_16_4> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_INST_20_16_3> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_INST_20_16_2> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_INST_20_16_1> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IDEX_INST_20_16_0> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MEMWB_WRITE_REG_4> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MEMWB_WRITE_REG_3> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MEMWB_WRITE_REG_2> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MEMWB_WRITE_REG_1> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MEMWB_WRITE_REG_0> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MEMWB_MEM_TO_REG> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IFID_PC_PLUS_4_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_PC_PLUS_4_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_BRANCH> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_NEW_PC_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ZERO> of sequential type is unconnected in block <Top>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <IDEX_REG_DST> is unconnected in block <Top>.
+INFO:Xst:2261 - The FF/Latch <IDEX_REG_WRITE> in Unit <Top> is equivalent to the following FF/Latch, which will be removed : <IDEX_ALU_OP_1> 
+WARNING:Xst:2677 - Node <MEMWB_READ_DATA> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_READ_DATA_2_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile32> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile35> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile33> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile34> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile36> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile37> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile40> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile38> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile39> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile43> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile41> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile42> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile46> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile44> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile45> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile47> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile48> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile51> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile49> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile50> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile52> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile53> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile56> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile54> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile55> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile57> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile58> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile61> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile59> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile60> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile62> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile63> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile66> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile64> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile65> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile67> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile68> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile71> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile69> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile70> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile72> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile73> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile76> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile74> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile75> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile77> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile78> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile81> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile79> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile80> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile84> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile82> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile83> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile87> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile85> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile86> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile88> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile89> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile92> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile90> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile91> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile93> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile94> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile97> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile95> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile96> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile98> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile99> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile102> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile100> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile101> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile103> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile104> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile107> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile105> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile106> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile108> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile109> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile112> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile110> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile111> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile113> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile114> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile117> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile115> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile116> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile118> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile119> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile122> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile120> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile121> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile125> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile123> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile124> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile128> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile126> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/Mram_memFile127> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <dataMem/readData_31> of sequential type is unconnected in block <Top>.
+
+Optimizing unit <Top> ...
+
+Optimizing unit <RegMem> ...
+
+Optimizing unit <Alu> ...
+WARNING:Xst:2677 - Node <IDEX_REG_WRITE> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_REG_WRITE> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_REG_WRITE> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_1_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <IDEX_READ_DATA_2_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <EXMEM_ALU_RESULT_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <MEMWB_ALU_RESULT_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_31_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_30_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_29_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_28_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_27_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_26_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_25_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_24_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_23_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_22_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_21_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_20_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_18_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_17_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_19_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_16_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_15_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_14_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_13_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_12_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_11_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_10_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_9_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_8_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_7_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_6_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_5_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_4_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_3_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_1_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_0_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <regMem/regFile_2_0> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_31> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_30> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_19> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_18> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_17> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_16> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_15> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_14> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_13> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_12> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_11> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_10> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_9> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_8> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_7> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_6> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_5> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_4> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_3> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_2> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_1> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <alu/_old_aluRes_3_0> of sequential type is unconnected in block <Top>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Top, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Top.ngr
+Top Level Output File Name         : Top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 2
+
+Cell Usage :
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                        0  out of   4656     0%  
+ Number of IOs:                           2
+ Number of bonded IOBs:                   0  out of    232     0%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 16.00 secs
+Total CPU time to Xst completion: 15.42 secs
+ 
+--> 
+
+Total memory usage is 336528 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings : 1541 (   0 filtered)
+Number of infos    :   18 (   0 filtered)
+

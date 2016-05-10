@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/TopSim.xst" -ofn "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/TopSim.syr" 

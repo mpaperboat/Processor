@@ -1,0 +1,50 @@
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 Top.ngc Top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Top_map.ncd Top.ngd Top.pcf 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 Top.ngc Top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Top_map.ncd Top.ngd Top.pcf 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 Top.ngc Top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Top_map.ncd Top.ngd Top.pcf 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 Top.ngc Top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Top_map.ncd Top.ngd Top.pcf 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 Top.ngc Top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Top_map.ncd Top.ngd Top.pcf 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 Top.ngc Top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Top_map.ncd Top.ngd Top.pcf 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 Top.ngc Top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Top_map.ncd Top.ngd Top.pcf 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+xst -intstyle ise -ifn "E:/Martin/lab5/Top.xst" -ofn "E:/Martin/lab5/Top.syr" 
+xst -intstyle ise -ifn "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Top.xst" -ofn "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 "Top.ngc" Top.ngd  
+xst -intstyle ise -ifn "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Top.xst" -ofn "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Top.syr" 
+xst -intstyle ise -ifn "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Top.xst" -ofn "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Top.syr" 
+xst -intstyle ise -ifn "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Top.xst" -ofn "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Top.syr" 
+xst -intstyle ise -ifn "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Top.xst" -ofn "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Top.syr" 
+xst -intstyle ise -ifn "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Top.xst" -ofn "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Top.syr" 
+xst -intstyle ise -ifn "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Top.xst" -ofn "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 "Top.ngc" Top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Top_map.ncd Top.ngd Top.pcf 
+xst -intstyle ise -ifn "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Top.xst" -ofn "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 "Top.ngc" Top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Top_map.ncd Top.ngd Top.pcf 

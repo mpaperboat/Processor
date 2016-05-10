@@ -1,0 +1,36 @@
+Running: C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/TopSim_isim_beh.exe -prj C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/TopSim_beh.prj work.TopSim work.glbl 
+ISim P.28xd (signature 0xa0883be4)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/SignExt.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/RegMem.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/InstMem.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/DataMem.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Ctr.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/AluCtr.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Alu.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Add.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Top.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/TopSim.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.2/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling module Add
+Compiling module InstMem
+Compiling module RegMem
+Compiling module SignExt
+Compiling module Ctr
+Compiling module AluCtr
+Compiling module Alu
+Compiling module DataMem
+Compiling module Top
+Compiling module TopSim
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 4 sub-compilation(s) to finish...
+WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: The system cannot find the path specified, "isim\TopSim_isim_beh.exe.sim\libPortability.dll".
+Compiled 11 Verilog Units
+Built simulation executable C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/TopSim_isim_beh.exe
+Fuse Memory Usage: 27848 KB
+Fuse CPU Usage: 515 ms

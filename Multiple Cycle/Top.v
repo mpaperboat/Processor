@@ -3,29 +3,76 @@ module Top(
 		input clock,
 		input reset
 	);
-	wire[31:0]INST;
+	//temp regs
 	reg[31:0]PC;
+	reg[31:0]IFID_PC_PLUS_4;
+	reg[31:0]IFID_INST;
+	
+	reg[31:0]IDEX_PC_PLUS_4;
+	reg[31:0]IDEX_READ_DATA_1;
+	reg[31:0]IDEX_READ_DATA_2;
+	reg[31:0]IDEX_INST_15_0;
+	reg[4:0]IDEX_INST_20_16;
+	reg[4:0]IDEX_INST_15_11;
+	reg IDEX_REG_DST;
+	reg IDEX_ALU_SRC;
+	reg IDEX_MEM_TO_REG;
+	reg IDEX_REG_WRITE;
+	reg IDEX_MEM_READ;
+	reg IDEX_MEM_WRITE;
+	reg IDEX_BRANCH;
+	reg[1:0]IDEX_ALU_OP;
+	reg IDEX_JUMP;
+	
+	reg[31:0]EXMEM_NEW_PC;
+	reg EXMEM_ZERO;
+	reg[31:0]EXMEM_ALU_RESULT;
+	reg[31:0]EXMEM_READ_DATA_2;
+	reg[4:0]EXMEM_WRITE_REG;
+	reg EXMEM_MEM_TO_REG;
+	reg EXMEM_REG_WRITE;
+	reg EXMEM_MEM_READ;
+	reg EXMEM_MEM_WRITE;
+	reg EXMEM_BRANCH;
+	reg EXMEM_JUMP;
+	
+	reg MEMWB_MEM_TO_REG;
+	reg MEMWB_REG_WRITE;
+	reg[31:0]MEMWB_READ_DATA;
+	reg[31:0]MEMWB_ALU_RESULT;
+	reg[4:0]MEMWB_WRITE_REG;
+	//begin
+	wire[31:0]PCIF_ADD_OUT;
+	wire PC_SRC;
+	//PC
+	Add PCIFAdd(
+		.in0(4),
+		.in1(PC),
+		.out(PCIF_ADD_OUT)
+	);
+	wire[31:0]INST_MEM_OUT;
 	InstMem instMem(
-		.readData(INST),
-		.address(PC));
-	wire[31:0]ADD1_OUT;
-	Add add1(
-		.input1(4),
-		.input2(PC),
-		.aluRes(ADD1_OUT));
+		.address(PC),
+		.readData(INST_MEM_OUT)
+	);
+	//IF/ID
+	wire[31:0]REGMEM_OUT1;
+	wire[31:0]REGMEM_OUT2;
+	wire[31:0]REG_WRITE_DATA;
+	RegMem regMem(
+		.clock(clock),
+		.reset(reset),
+		.readReg1(IFID_INST[25:21]),
+		.readReg2(IFID_INST[20:16]),
+		.writeReg(MEMWB_WRITE_REG),
+		.writeData(REG_WRITE_DATA),
+		.regWrite(MEMWB_REG_WRITE),
+		.readData1(REGMEM_OUT1),
+		.readData2(REGMEM_OUT2));
 	wire[31:0]SIGNEXT_OUT;
 	SignExt signExt(
-		.in(INST[15:0]),
+		.in(IFID_INST[15:0]),
 		.out(SIGNEXT_OUT));
-	wire[31:0]SHL22_OUT;
-	ShL2 shL22(
-		.in(SIGNEXT_OUT),
-		.out(SHL22_OUT));
-	wire[31:0]ADD2_OUT;
-	Add add2(
-		.input1(SHL22_OUT),
-		.input2(ADD1_OUT),
-		.aluRes(ADD2_OUT));
 	wire REG_DST;
 	wire ALU_SRC;
 	wire MEM_TO_REG;
@@ -36,7 +83,7 @@ module Top(
 	wire[1:0]ALU_OP;
 	wire JUMP;
 	Ctr ctr(
-		.opCode(INST[31:26]),
+		.opCode(IFID_INST[31:26]),
 		.regDst(REG_DST),
 		.aluSrc(ALU_SRC),
 		.memToReg(MEM_TO_REG),
@@ -46,89 +93,120 @@ module Top(
 		.branch(BRANCH),
 		.aluOp(ALU_OP),
 		.jump(JUMP));
-	wire[31:0]MUX1_OUT;
-	Mux mux1(
-		.in0({27'b000000000000000000000000000,INST[20:16]}),
-		.in1({27'b000000000000000000000000000,INST[15:11]}),
-		.sel(REG_DST),
-		.out(MUX1_OUT));
-	wire[31:0]MUX5_OUT;
-	wire[31:0]REGMEM_OUT1;
-	wire[31:0]REGMEM_OUT2;
-	RegMem regMem(
-		.clock(clock),
-		.reset(reset),
-		.readReg1(INST[25:21]),
-		.readReg2(INST[20:16]),
-		.writeReg(MUX1_OUT),
-		.writeData(MUX5_OUT),
-		.regWrite(REG_WRITE),
-		.readData1(REGMEM_OUT1),
-		.readData2(REGMEM_OUT2));
-	wire[31:0]MUX2_OUT;
-	Mux mux2(
-		.in0(REGMEM_OUT2),
-		.in1(SIGNEXT_OUT),
-		.sel(ALU_SRC),
-		.out(MUX2_OUT));
+	//ID/EX
+	wire[31:0]EXADD_OUT;
+	Add EXAdd(
+		.in0(IDEX_PC_PLUS_4),
+		.in1(IDEX_INST_15_0<<2),
+		.out(EXADD_OUT)
+	);
+	wire[31:0]EX_MUX1;
+	assign EX_MUX1=IDEX_ALU_SRC?IDEX_INST_15_0:IDEX_READ_DATA_2;
 	wire[3:0]ALUCTR_OUT;
 	AluCtr aluCtr(
-		.aluOp(ALU_OP),
-		.funct(INST[5:0]),
+		.aluOp(IDEX_ALU_OP),
+		.funct(IDEX_INST_15_0[5:0]),
 		.aluCtr(ALUCTR_OUT));
 	wire ALU_ZERO;
 	wire[31:0]ALU_OUT;
 	Alu alu(
-		.input1(REGMEM_OUT1),
-		.input2(MUX2_OUT),
+		.input1(IDEX_READ_DATA_1),
+		.input2(EX_MUX1),
 		.aluCtr(ALUCTR_OUT),
 		.aluRes(ALU_OUT),
 		.zero(ALU_ZERO));
-	wire AND_OUT;
-	And and1(
-		.in1(BRANCH),
-		.in2(ALU_ZERO),
-		.out(AND_OUT));
-	wire[31:0]MUX3_OUT;
-	Mux mux3(
-		.in0(ADD1_OUT),
-		.in1(ADD2_OUT),
-		.sel(AND_OUT),
-		.out(MUX3_OUT));
-	wire[31:0]MUX4_OUT;
-	wire[31:0]SHL21_OUT;
-	ShL2 shL21(
-		.in({6'b000000,INST[25:0]}),
-		.out(SHL21_OUT));
-	wire[31:0]JUMP_ADDR;
-	assign JUMP_ADDR={INST[31:28],SHL21_OUT[27:0]};
-	Mux mux4(
-		.in0(MUX3_OUT),
-		.in1(JUMP_ADDR),
-		.sel(JUMP),
-		.out(MUX4_OUT));
-	always@(posedge clock)
-	begin
-		if(reset==0)
-		begin
-			PC=MUX4_OUT;
-		end
-		else
-		begin
-			PC=0;
-		end
-	end
+	wire[4:0]EX_MUX2;
+	assign EX_MUX2=IDEX_REG_DST?IDEX_INST_15_11:IDEX_INST_20_16;
+	//EXMEM
+	assign PC_SRC=EXMEM_BRANCH&EXMEM_ZERO;
 	wire[31:0]DATAMEM_OUT;
 	DataMem dataMem(
 		.clock(clock),
-		.memRead(MEM_READ),
-		.memWrite(MEM_WRITE),
-		.writeData(REGMEM_OUT2),
+		.memRead(EXMEM_MEM_READ),
+		.memWrite(EXMEM_MEM_WRITE),
+		.writeData(EXMEM_READ_DATA_2),
 		.readData(DATAMEM_OUT),
-		.address(ALU_OUT));
-	Mux mux5(
-		.in0(ALU_OUT),
-		.in1(DATAMEM_OUT),
-		.sel(MEM_TO_REG),
-		.out(MUX5_OUT));
+		.address(EXMEM_ALU_RESULT));
+	//MEM/WB
+	assign REG_WRITE_DATA=MEMWB_MEM_TO_REG?MEMWB_READ_DATA:MEMWB_ALU_RESULT;
+	
+	reg[31:0]PC_TEMP;
+	always@(posedge clock)
+	begin
+		MEMWB_MEM_TO_REG=EXMEM_MEM_TO_REG;
+		MEMWB_REG_WRITE=EXMEM_REG_WRITE;
+		MEMWB_READ_DATA=DATAMEM_OUT;
+		MEMWB_ALU_RESULT=EXMEM_ALU_RESULT;
+		MEMWB_WRITE_REG=EXMEM_WRITE_REG;
+		PC_TEMP=PC_SRC?EXMEM_NEW_PC:PCIF_ADD_OUT;
+		EXMEM_NEW_PC=EXADD_OUT;
+		EXMEM_ZERO=ALU_ZERO;
+		EXMEM_ALU_RESULT=ALU_OUT;
+		EXMEM_READ_DATA_2=IDEX_READ_DATA_2;
+		EXMEM_WRITE_REG=EX_MUX2;
+		EXMEM_MEM_TO_REG=IDEX_MEM_TO_REG;
+		EXMEM_REG_WRITE=IDEX_REG_WRITE;
+		EXMEM_MEM_READ=IDEX_MEM_READ;
+		EXMEM_MEM_WRITE=IDEX_MEM_WRITE;
+		EXMEM_BRANCH=IDEX_BRANCH;
+		EXMEM_JUMP=IDEX_JUMP;
+		IDEX_READ_DATA_1=REGMEM_OUT1;
+		IDEX_READ_DATA_2=REGMEM_OUT2;
+		IDEX_INST_15_0=SIGNEXT_OUT;
+		IDEX_INST_20_16=IFID_INST[20:16];
+		IDEX_INST_15_11=IFID_INST[15:11];
+		IDEX_REG_DST=REG_DST;
+		IDEX_ALU_SRC=ALU_SRC;
+		IDEX_MEM_TO_REG=MEM_TO_REG;
+		IDEX_REG_WRITE=REG_WRITE;
+		IDEX_MEM_READ=MEM_READ;
+		IDEX_MEM_WRITE=MEM_WRITE;
+		IDEX_BRANCH=BRANCH;
+		IDEX_ALU_OP=ALU_OP;
+		IDEX_JUMP=JUMP;
+		IDEX_PC_PLUS_4=IFID_PC_PLUS_4;
+		IFID_PC_PLUS_4=PCIF_ADD_OUT;
+		IFID_INST=INST_MEM_OUT;
+		PC=PC_TEMP;
+		if(reset)
+		begin
+			PC=0;
+			IFID_PC_PLUS_4=0;
+			IFID_INST=0;
+			
+			IDEX_PC_PLUS_4=0;
+			IDEX_READ_DATA_1=0;
+			IDEX_READ_DATA_2=0;
+			IDEX_INST_15_0=0;
+			IDEX_INST_20_16=0;
+			IDEX_INST_15_11=0;
+			IDEX_REG_DST=0;
+			IDEX_ALU_SRC=0;
+			IDEX_MEM_TO_REG=0;
+			IDEX_REG_WRITE=0;
+			IDEX_MEM_READ=0;
+			IDEX_MEM_WRITE=0;
+			IDEX_BRANCH=0;
+			IDEX_ALU_OP=0;
+			IDEX_JUMP=0;
+			
+			EXMEM_NEW_PC=0;
+			EXMEM_ZERO=0;
+			EXMEM_ALU_RESULT=0;
+			EXMEM_READ_DATA_2=0;
+			EXMEM_WRITE_REG=0;
+			EXMEM_MEM_TO_REG=0;
+			EXMEM_REG_WRITE=0;
+			EXMEM_MEM_READ=0;
+			EXMEM_MEM_WRITE=0;
+			EXMEM_BRANCH=0;
+			EXMEM_JUMP=0;
+			
+			MEMWB_MEM_TO_REG=0;
+			MEMWB_REG_WRITE=0;
+			MEMWB_READ_DATA=0;
+			MEMWB_ALU_RESULT=0;
+			MEMWB_WRITE_REG=0;
+		end
+	end
 endmodule

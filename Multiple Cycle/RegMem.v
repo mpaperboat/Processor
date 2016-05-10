@@ -4,7 +4,7 @@ module RegMem(
 	input clock,
 	input [4:0]readReg1,
 	input [4:0]readReg2,
-	input [31:0]writeReg,
+	input [4:0]writeReg,
 	input [31:0]writeData,
 	input regWrite,
 	output reg[31:0]readData1,

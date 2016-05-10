@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 module Add(
-	input[31:0]input1,
-	input[31:0]input2,
-	output reg[31:0]aluRes
+	input[31:0]in0,
+	input[31:0]in1,
+	output reg[31:0]out
    );
-	always@(input1 or input2)
-		aluRes=input1+input2;
+	always@(in0 or in1)
+		out=in1+in0;
 endmodule
