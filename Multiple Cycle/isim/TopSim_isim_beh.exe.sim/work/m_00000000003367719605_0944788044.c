@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/Add.v";
+static const char *ng0 = "C:/Users/mpape/Documents/GitHub/Processors/Multiple Cycle/Add.v";
 
 
 

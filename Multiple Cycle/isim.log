@@ -1,5 +1,5 @@
 ISim log file
-Running: C:\Users\mpape\Documents\GitHub\Processor\Multiple Cycle\TopSim_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/TopSim_isim_beh.wdb 
+Running: C:\Users\mpape\Documents\GitHub\Processors\Multiple Cycle\TopSim_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/mpape/Documents/GitHub/Processors/Multiple Cycle/TopSim_isim_beh.wdb 
 ISim P.28xd (signature 0xa0883be4)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -12,15 +12,6 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 # restart
-# run 1ns
+# run 1.00us
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# run 4ns
-# run 4ns
-# run 4ns
-# run 4ns
-# run 4ns
-# run 4ns
-# run 4ns
-# run 4ns
-# run 4ns

@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/mpape/Documents/GitHub/Processor/Multiple Cycle/TopSim.v";
+static const char *ng0 = "C:/Users/mpape/Documents/GitHub/Processors/Multiple Cycle/TopSim.v";
 static int ng1[] = {0, 0};
 static int ng2[] = {1, 0};
 
