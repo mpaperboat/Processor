@@ -10,7 +10,7 @@ module DataMem(
 	reg[31:0]memFile[0:127];
 	initial
 	begin
-		$readmemh("./data_mem.txt",memFile,10'h0);
+		$readmemh("./data_mem.txt",memFile,13'h0);
 	end
 	always@(address or memRead)
 	begin

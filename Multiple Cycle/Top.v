@@ -84,7 +84,8 @@ module Top(
 		.EXMEM_REG_DES(EXMEM_WRITE_REG),
 		.EXMEM_DATA(EXMEM_MEM_TO_REG?DATAMEM_OUT:EXMEM_ALU_RESULT),
 		.IDEX_DATA(ALU_OUT),
-		.regok(regok)
+		.regok(regok),
+		.IFID_INST(IFID_INST)
 	);
 	wire[31:0]SIGNEXT_OUT;
 	SignExt signExt(

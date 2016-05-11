@@ -15,6 +15,7 @@ module RegMem(
 	input[4:0]EXMEM_REG_DES,
 	input[31:0]EXMEM_DATA,
 	input[31:0]IDEX_DATA,
+	input[31:0]IFID_INST,
 	input IDEX_MEM_TO_REG,
 	output reg regok
 	);
@@ -31,13 +32,13 @@ module RegMem(
 			if(IDEX_REG_WRITE&&IDEX_REG_DES==readReg1)
 			begin
 				readData1=IDEX_DATA;
-				if(IDEX_MEM_TO_REG)
+				if(IDEX_MEM_TO_REG&&IFID_INST[31:26]!=6'b000100)
 					regok=0;
 			end
 			if(IDEX_REG_WRITE&&IDEX_REG_DES==readReg2)
 			begin
 				readData2=IDEX_DATA;
-				if(IDEX_MEM_TO_REG)
+				if(IDEX_MEM_TO_REG&&(IFID_INST[31:26]==6'b000000||IFID_INST[31:26]==6'b101011))
 					regok=0;
 			end
 	end

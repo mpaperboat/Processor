@@ -6,7 +6,7 @@ module InstMem(
 	reg[31:0]instFile[0:127];
 	initial 
 	begin
-		$readmemb("./inst_mem.txt",instFile,8'h0);
+		$readmemb("./inst_mem.txt",instFile,18'h0);
 	end
 	always@(address)
 	begin

@@ -12,6 +12,7 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 # restart
-# run 1.00us
+# run all
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
+Stopped at time : 68526462 ns : File "C:/Users/mpape/Documents/GitHub/Processors/Multiple Cycle/Top.v" Line 152

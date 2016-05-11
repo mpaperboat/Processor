@@ -65,7 +65,7 @@ module Ctr(
 		begin
 			regDst=1;
 			aluSrc=0;
-			memToReg=1;
+			memToReg=0;
 			regWrite=0;
 			memRead=0;
 			memWrite=0;
