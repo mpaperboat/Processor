@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-05-10T12:42:32</DateModified>
+  <DateModified>2016-05-18T18:43:42</DateModified>
   <ModuleName>Top</ModuleName>
   <SummaryTimeStamp>2016-05-05T09:24:53</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/mpape/Documents/GitHub/Processor/Single Cycle/iseconfig/Top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/mpape/Documents/GitHub/Processor/Single Cycle\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/mpape/Documents/GitHub/Processors/Single Cycle/iseconfig/Top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/mpape/Documents/GitHub/Processors/Single Cycle\</ImplementationReportsDirectory>
   <DateInitialized>2016-04-21T11:11:56</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

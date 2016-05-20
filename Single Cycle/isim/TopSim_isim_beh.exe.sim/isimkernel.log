@@ -2,14 +2,14 @@ Command line:
    TopSim_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  2272
+     -socket  19783
 
-Tue May 10 10:14:04 2016
+Wed May 18 18:45:55 2016
 
 
- Elaboration Time: 0.015625 sec
+ Elaboration Time: 0.046875 sec
 
- Current Memory Usage: 838.922 Meg
+ Current Memory Usage: 838.902 Meg
 
  Total Signals          : 92
  Total Nets             : 735
@@ -20,10 +20,11 @@ Tue May 10 10:14:04 2016
  Total Traceable Variables  : 46
  Total Scalar Nets and Variables : 10416
 Total Line Count : 210
+Total Line Count : 210
 
- Total Simulation Time: 0.28125 sec
+ Total Simulation Time: 1476.38 sec
 
- Current Memory Usage: 1153.5 Meg
+ Current Memory Usage: 367.043 Meg
 
-Tue May 10 10:14:44 2016
+Wed May 18 19:11:45 2016
 

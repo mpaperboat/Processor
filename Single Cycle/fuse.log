@@ -1,21 +1,21 @@
-Running: C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/mpape/OneDrive/Work/MIPS-like CPU/TopSim_isim_beh.exe -prj C:/Users/mpape/OneDrive/Work/MIPS-like CPU/TopSim_beh.prj work.TopSim work.glbl 
+Running: C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/mpape/Documents/GitHub/Processors/Single Cycle/TopSim_isim_beh.exe -prj C:/Users/mpape/Documents/GitHub/Processors/Single Cycle/TopSim_beh.prj work.TopSim work.glbl 
 ISim P.28xd (signature 0xa0883be4)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Analyzing Verilog file "C:/Users/mpape/OneDrive/Work/MIPS-like CPU/SignExt.v" into library work
-Analyzing Verilog file "C:/Users/mpape/OneDrive/Work/MIPS-like CPU/ShL2.v" into library work
-Analyzing Verilog file "C:/Users/mpape/OneDrive/Work/MIPS-like CPU/RegMem.v" into library work
-Analyzing Verilog file "C:/Users/mpape/OneDrive/Work/MIPS-like CPU/Mux.v" into library work
-Analyzing Verilog file "C:/Users/mpape/OneDrive/Work/MIPS-like CPU/InstMem.v" into library work
-Analyzing Verilog file "C:/Users/mpape/OneDrive/Work/MIPS-like CPU/DataMem.v" into library work
-Analyzing Verilog file "C:/Users/mpape/OneDrive/Work/MIPS-like CPU/Ctr.v" into library work
-Analyzing Verilog file "C:/Users/mpape/OneDrive/Work/MIPS-like CPU/And.v" into library work
-Analyzing Verilog file "C:/Users/mpape/OneDrive/Work/MIPS-like CPU/AluCtr.v" into library work
-Analyzing Verilog file "C:/Users/mpape/OneDrive/Work/MIPS-like CPU/Alu.v" into library work
-Analyzing Verilog file "C:/Users/mpape/OneDrive/Work/MIPS-like CPU/Add.v" into library work
-Analyzing Verilog file "C:/Users/mpape/OneDrive/Work/MIPS-like CPU/Top.v" into library work
-Analyzing Verilog file "C:/Users/mpape/OneDrive/Work/MIPS-like CPU/TopSim.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processors/Single Cycle/SignExt.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processors/Single Cycle/ShL2.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processors/Single Cycle/RegMem.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processors/Single Cycle/Mux.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processors/Single Cycle/InstMem.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processors/Single Cycle/DataMem.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processors/Single Cycle/Ctr.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processors/Single Cycle/And.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processors/Single Cycle/AluCtr.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processors/Single Cycle/Alu.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processors/Single Cycle/Add.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processors/Single Cycle/Top.v" into library work
+Analyzing Verilog file "C:/Users/mpape/Documents/GitHub/Processors/Single Cycle/TopSim.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.2/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
@@ -35,7 +35,8 @@ Compiling module TopSim
 Compiling module glbl
 Time Resolution for simulation is 1ps.
 Waiting for 7 sub-compilation(s) to finish...
+WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: 系统找不到指定的路径。, "isim\TopSim_isim_beh.exe.sim\libPortability.dll".
 Compiled 14 Verilog Units
-Built simulation executable C:/Users/mpape/OneDrive/Work/MIPS-like CPU/TopSim_isim_beh.exe
-Fuse Memory Usage: 29004 KB
-Fuse CPU Usage: 577 ms
+Built simulation executable C:/Users/mpape/Documents/GitHub/Processors/Single Cycle/TopSim_isim_beh.exe
+Fuse Memory Usage: 27264 KB
+Fuse CPU Usage: 671 ms
